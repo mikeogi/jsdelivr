@@ -1,0 +1,13 @@
+.PackagesTable {
+  &__Empty_content_row {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+  &__tbody {
+    transition: .2s ease-in-out;
+    &__loading {
+      opacity: .2;
+    }
+  }
+}

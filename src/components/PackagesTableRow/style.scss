@@ -1,0 +1,25 @@
+.PackagesTableRow {
+  &__latest {
+    display: flex;
+    flex-direction: column;
+    span {
+      white-space: nowrap;
+    }
+  }
+  &__description {
+    padding: 5px;
+  }
+  &__links {
+    &__link {
+      margin: 5px;
+      text-decoration: none;
+      border: 1px solid #e5e5e5;
+      padding: 2px;
+      transition: .3s ease-in-out;
+      border-radius: 2px;
+      &:hover {
+        border-color: #444;
+      }
+    }
+  }
+}
