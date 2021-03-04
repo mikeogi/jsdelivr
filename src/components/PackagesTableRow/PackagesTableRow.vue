@@ -35,22 +35,34 @@
         </a>
         <a
           class="PackagesTableRow__links__link"
-          :href="`${links.user}`"
-          target="_blank"
-        >
-          <v-icon small>mdi-account</v-icon>
-        </a>
-        <a
-          class="PackagesTableRow__links__link"
           :href="`${links.home}`"
           target="_blank"
         >
           <v-icon small>mdi-github</v-icon>
         </a>
+        <a
+          class="PackagesTableRow__links__link"
+          :href="`${links.user}`"
+          target="_blank"
+        >
+          <img
+            v-if="!isUserAvatarLoadError"
+            class="PackagesTableRow__links__link__avatar"
+            :src="`${userAvatar}`"
+            @error="avatarLoadError"
+            :alt="userName"
+          />
+          <v-icon v-else small>mdi-account</v-icon>
+        </a>
       </div>
     </td>
     <td class="PackagesTableRow">
       <div class="PackagesTableRow__more_info"></div>
+    </td>
+    <td class="PackagesTableRow">
+      <div class="PackagesTableRow__more_action">
+        <v-btn @click="openPackage">Open</v-btn>
+      </div>
     </td>
   </tr>
 </template>
@@ -71,6 +83,20 @@ export default {
       home: '',
     })},
     userAvatar: { type: String, default: '' },
+    userName: { type: String, default: '' },
+  },
+  data() {
+    return {
+      isUserAvatarLoadError: false,
+    }
+  },
+  methods: {
+    avatarLoadError() {
+      this.isUserAvatarLoadError = true
+    },
+    openPackage() {
+      this.$emit('openPackage', this.name)
+    },
   },
 }
 </script>

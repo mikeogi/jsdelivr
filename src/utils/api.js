@@ -56,7 +56,7 @@ class Api {
 
   getPackageByName(name) {
     return Promise.resolve().then(() => {
-      return this.index.getObject(name).then((pkg) => pkg)
+      return this.index.getObject(name).then((response) => ({ response }))
     })
   }
 }

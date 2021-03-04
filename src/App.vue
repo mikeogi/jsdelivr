@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import SearchField from '@/components/SearchField'
 import PackagesTable from '@/components/PackagesTable'
 import Pagination from '@/components/Pagination'

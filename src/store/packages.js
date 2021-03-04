@@ -1,5 +1,5 @@
 import api from "../utils/api";
-import router from '../plugins/router'
+import formatPackageList from './../utils/formatPackageList'
 
 const state = () => ({
   loading: false,
@@ -11,18 +11,13 @@ const state = () => ({
   }
 });
 
-/**
- * nbHits: 380
-nbPages: 38
- */
-
 const actions = {
   async fetchData({ commit }, { searchValue = '', page = 1 }) {
     commit("startLoading");
     const { response } = await api.searchPackages(searchValue, page);
     commit("finishLoading");
     if (response.hits) {
-      commit("setData", response.hits)
+      commit("setData", formatPackageList(response.hits))
       commit('setPageCount', response.nbPages)
       commit('setPackageCount', response.nbHits)
     } else {
