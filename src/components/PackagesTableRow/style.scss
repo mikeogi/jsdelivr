@@ -30,4 +30,12 @@
       }
     }
   }
+  &__more_info__item {
+    margin: 0 5px;
+    border: 1px solid #e5e5e5;
+    padding: 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }

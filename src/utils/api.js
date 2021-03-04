@@ -1,4 +1,5 @@
 import algoliasearch from "algoliasearch";
+import { ALGOLIA_API_KEY, ALGOLIA_APP_ID } from "./constants";
 
 const ATTR_REGEXP = /\s*(?:[a-z]+)\s*:\s*(?:.(?![a-z]*\s*:))*/gi;
 const QUERY_REGEXP = /^((?:(?:[^\s:]+(?![a-z]*\s*:))\s*)*)/i;
@@ -61,6 +62,6 @@ class Api {
   }
 }
 
-const api = new Api('OFCNCOG2CU', 'f54e21fa3a2a0160595bb058179bfb1e');
+const api = new Api(ALGOLIA_APP_ID, ALGOLIA_API_KEY);
 
 export default api;

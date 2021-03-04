@@ -35,6 +35,9 @@
           :latestInfo="getLatestInfo(pkg)"
           :links="getLinks(pkg)"
           :userAvatar="pkg.userAvatar"
+          :deprecated="pkg.deprecated"
+          :popular="pkg.popular"
+          :license="pkg.license"
           @openPackage="onOpenPackage"
         ></packages-table-row>
       </tbody>

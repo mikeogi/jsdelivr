@@ -17,7 +17,7 @@
         <span>
           <span class="font-weight-medium">
             Version:</span> {{ latestInfo.version }}
-        </span>
+          </span>
         <span>
         <span class="font-weight-medium">
           Last update:</span> {{ latestInfo.modifiedDate }}
@@ -57,7 +57,17 @@
       </div>
     </td>
     <td class="PackagesTableRow">
-      <div class="PackagesTableRow__more_info"></div>
+      <div class="PackagesTableRow__more_info">
+        <span
+          class="PackagesTableRow__more_info__item"
+          v-if="deprecated">🚫</span>
+        <span
+          class="PackagesTableRow__more_info__item"
+          v-if="popular">⭐</span>
+        <span
+          class="PackagesTableRow__more_info__item"
+          v-if="license">⚖️ {{ license }}</span>
+      </div>
     </td>
     <td class="PackagesTableRow">
       <div class="PackagesTableRow__more_action">
@@ -84,6 +94,9 @@ export default {
     })},
     userAvatar: { type: String, default: '' },
     userName: { type: String, default: '' },
+    deprecated: { type: Boolean, default: false },
+    popular: { type: Boolean, default: false },
+    license: { type: String, default: '' },
   },
   data() {
     return {

@@ -5,9 +5,9 @@
     @input="onClose"
   >
     <v-card class="PackageModal">
-      <vue-markdown v-if="pkg">
-        {{ pkg.readme }}
-      </vue-markdown>
+      <div class="PackageModal__readme">
+        <vue-markdown v-if="pkg">{{ pkg.readme }}</vue-markdown>
+      </div>
     </v-card>
   </v-dialog>
 </template>

@@ -12,6 +12,7 @@
         <pagination v-model="page"></pagination>
       </div>
     </v-container>
+    <app-footer></app-footer>
   </v-app>
 </template>
 
@@ -19,6 +20,7 @@
 import SearchField from '@/components/SearchField'
 import PackagesTable from '@/components/PackagesTable'
 import Pagination from '@/components/Pagination'
+import AppFooter from '@/components/Footer'
 
 export default {
   name: "App",
@@ -27,6 +29,7 @@ export default {
     SearchField,
     PackagesTable,
     Pagination,
+    AppFooter,
   },
 
   data() {
@@ -77,6 +80,9 @@ export default {
 
 
 <style scoped>
+.App {
+  justify-content: space-between;
+}
 .Pagination {
   margin-top: 25px;
 }

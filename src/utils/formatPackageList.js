@@ -2,7 +2,7 @@ const formatPackageList = (list) => list.map((pkg) => ({
   name: pkg.name,
   description: pkg.description,
   homepage: pkg.homepage,
-  licencse: pkg.licencse,
+  license: pkg.license,
   userAvatar: pkg.owner?.avatar,
   userName: pkg.owner?.name,
   userPage: pkg.owner?.link,
