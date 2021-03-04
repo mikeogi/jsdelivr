@@ -20,6 +20,11 @@ yarn build
 yarn lint
 ```
 
+### Build and start app on port 4000
+```
+yarn start
+```
+
 ### Список дополнительных пакетов:
 ```
 1. algoliasearch
