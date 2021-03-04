@@ -50,8 +50,8 @@ export default {
 
   watch: {
     async searchValue() {
-      this.page = 1
       if (this.searchValue) {
+        this.page = 1
         await this.fetchPackages()
       } else {
         this.$router.push({ query: {} })
@@ -59,7 +59,9 @@ export default {
       }
     },
     async page() {
-      await this.fetchPackages()
+      if (this.page) {
+        await this.fetchPackages()
+      }
     },
   },
 

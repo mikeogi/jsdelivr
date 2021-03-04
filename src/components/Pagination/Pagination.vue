@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     handleChange(value) {
-      console.log('change', value)
       this.$emit('change', value)
     },
   },
