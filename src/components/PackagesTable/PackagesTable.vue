@@ -9,9 +9,9 @@
     >
       <colgroup>
         <col span="1" style="width: 5%;">
-        <col span="1" style="width: 40%;">
+        <col span="1" style="width: 35%;">
         <col span="1" style="width: 20%;">
-        <col span="1" style="width: 15%;">
+        <col span="1" style="width: 20%;">
         <col span="1" style="width: 15%;">
         <col span="1" style="width: 5%;">
       </colgroup>

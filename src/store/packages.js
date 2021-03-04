@@ -12,6 +12,13 @@ const state = () => ({
 });
 
 const actions = {
+  async clear({ commit }) {
+    commit('setData', [])
+    commit('setPageCount', 0)
+    commit('setPackageCount', 0)
+    commit('setError', null)
+  },
+
   async fetchData({ commit }, { searchValue = '', page = 1 }) {
     commit("startLoading");
     const { response } = await api.searchPackages(searchValue, page);

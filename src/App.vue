@@ -51,7 +51,12 @@ export default {
   watch: {
     async searchValue() {
       this.page = 1
-      await this.fetchPackages()
+      if (this.searchValue) {
+        await this.fetchPackages()
+      } else {
+        this.$router.push({ query: {} })
+        await this.$store.dispatch('packages/clear')
+      }
     },
     async page() {
       await this.fetchPackages()
@@ -79,9 +84,9 @@ export default {
 </script>
 
 
-<style scoped>
-.App {
-  justify-content: space-between;
+<style>
+.v-application--wrap {
+  justify-content: space-between !important;
 }
 .Pagination {
   margin-top: 25px;

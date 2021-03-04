@@ -1,3 +1,17 @@
+.Footer {
+  padding: 25px;;
+  position: static;
+  height: 8vh;
+  h5 {
+    white-space: nowrap;
+    display: inline-flex;
+  }
+  a {
+    margin-left: 2px;
+    color: rgb(64, 148, 226);
+  }
+}
+
 .heart_symb {
   margin: 0 4px;
   &:after {
